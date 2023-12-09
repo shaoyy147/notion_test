@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: '3.8.0'
       - run: pip install notion-client
-      - run: python update_content
+      - run: python update_content.py
       - run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
