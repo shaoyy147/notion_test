@@ -1,0 +1,17 @@
+baseURL = ""
+languageCode = "en-us"
+title = "zh-Hans"
+
+theme = "moments"
+
+paginate = 5
+paginatePath = '.'
+
+
+[params]
+    title = "Moments"
+    signature = "不期而遇、不言而喻"
+    cover = "https://user-images.githubusercontent.com/25521745/54870640-c141a180-4d7f-11e9-94f7-5d018b66716f.jpg"
+
+    name = "杜重"
+    avatar = "avatar.png"
