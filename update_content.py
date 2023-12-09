@@ -2,7 +2,6 @@
 from notion_client import Client
 from typing import List, Tuple
 from textwrap import dedent
-from pprint import pprint
 from datetime import datetime
 
 import os

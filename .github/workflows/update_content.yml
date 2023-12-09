@@ -1,0 +1,24 @@
+name: update_content
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 */1 * * *'
+
+jobs:
+  run-python-scripts:
+    runs-on: ubuntu-20.04
+    env:
+      NOTION_AUTH: ${{secrets.NOTION_AUTH}}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.0'
+      - run: pip install notion-client
+      - run: python update_content
+      - run: |
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git add .
+            git commit -m "generated"
+            git push
