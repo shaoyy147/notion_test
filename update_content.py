@@ -192,5 +192,6 @@ for notion_page in notion_pages:
 
 
 # %%
+os.mkdir("./content")
 for page in pages:
     write_2_markdown_files(page)
