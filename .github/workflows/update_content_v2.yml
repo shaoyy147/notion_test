@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       NOTION_AUTH: ${{secrets.NOTION_AUTH}}
+      NOTION_DATABASE_ID: ${{secrets.NOTION_DATABASE_ID}}
     permissions: write-all
     steps:
       - uses: actions/checkout@v4

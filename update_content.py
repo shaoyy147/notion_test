@@ -8,14 +8,18 @@ import os
 
 # %%
 auth = os.environ.get("NOTION_AUTH")
-notion = Client(auth=auth)
-
-# page_blocks = notion.blocks.children.list("c98863f5-dab0-458d-abed-a294fdc1e1e9")
-# pprint(page_blocks['results'])
+notion_database_id = os.environ.get("NOTION_DATABASE_ID")
 
 # %%
-notion_pages = notion.databases.query("33b1d56b229e44d8b519c8b93fc1d0a3")['results']
-notion_pages
+notion = Client(auth=auth)
+FILTER = {
+    "property": "Publish",
+    "select": {
+        "equals": "Yes"
+    }
+}
+notion_pages = notion.databases.query(notion_database_id, filter=FILTER)['results']
+print(f"total num of pages: {len(notion_pages)}")
 
 
 # %%
