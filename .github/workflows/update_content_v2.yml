@@ -23,6 +23,7 @@ jobs:
         with:
           hugo-version: '0.85.0'
           extended: true
+      - run: git clone --branch dev --depth 1 https://github.com/FarseaSH/hugo-theme-moments.git ./themes/moments
       - name: Hugo build
         run: hugo
       - uses: amondnet/vercel-action@v20
