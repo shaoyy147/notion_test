@@ -35,3 +35,5 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations ######
           app_location: "./public" # App source code path relative to repository root
+          output_location: ''
+          skip_app_build: true
