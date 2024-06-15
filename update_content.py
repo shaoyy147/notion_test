@@ -50,6 +50,7 @@ class MomentPage:
         # -- parse meta info -- 
         self.page_id = notion_database_page['id']
         self.name = "".join(rich_text_part['plain_text'] for rich_text_part in notion_database_page['properties']['Name']['title'])
+        self.signature = "".join(rich_text_part['plain_text'] for rich_text_part in notion_database_page['properties']['Signature']['rich_text'])
 
         if notion_database_page['properties']['Date']['date']:
             self.created_time = datetime.strptime(notion_database_page['properties']['Date']['date']['start'], TIME_FORMAT)
@@ -81,6 +82,7 @@ class MomentPage:
                 top:
                 name: {self.author if self.author else ""}
                 avatar:
+                signature: {self.signature if self.signature else ""}
 
                 date: {self.created_time.strftime(r'%Y-%m-%dT%H:%M:%S%z')[:-2] + ":00"}
 
