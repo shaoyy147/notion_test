@@ -4,6 +4,8 @@ on:
   # schedule:
     # - cron:  '0 * */1 * *'
 
+permissions: write-all
+
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -11,7 +13,6 @@ jobs:
       NOTION_AUTH: ${{secrets.NOTION_AUTH}}
       NOTION_DATABASE_ID: ${{secrets.NOTION_DATABASE_ID}}
       HUGO_VERSION: 0.85.0
-    permissions: write-all
     steps:
       - name: Checkout repo files
         uses: actions/checkout@v4 
